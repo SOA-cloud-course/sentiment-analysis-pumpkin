@@ -1,6 +1,6 @@
 ###START-CONF
 ##{
-##"object_name": "sentiment_analyses",
+##"object_name": "filter",
 ##"object_poi": "qpwo-2345",
 ##"auto-load": true,
 ##"remoting" : true,
@@ -11,7 +11,7 @@
 ##                      "required": true,
 ##                      "type": "TweetString",
 ##                      "format": "",
-##                      "state" : "MOVIE"
+##                      "state" : "RAW"
 ##                  }
 ##              ],
 ##"return": [
@@ -33,7 +33,7 @@ from random import randint
 from pumpkin import PmkSeed
 import nltk
 
-class sentiment_analyses(PmkSeed.Seed):
+class filter(PmkSeed.Seed):
 
     def __init__(self, context, poi=None):
         PmkSeed.Seed.__init__(self, context,poi)
