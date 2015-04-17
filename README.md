@@ -40,17 +40,13 @@ Complete (see slides) and copy *pumpkin* configuration file into working directo
 ```
 scp pumpkin.cfg pumpkin1:pumpkin/
 ```
-You can also change a group to other value (it is set to `T`). With an existing value, your workers might communicate with workers of other people since the messages are identified in the system by a pair: message type and a group.
+You should also change a group name. With the same value for different groups, your workers might communicate with workers of other people since the messages are identified in the system by a pair: message type and a group.
 
 ## Run Pumpkin
 
-The simplest way to run pumpkin is to execute:
+In order to start pumpkin, execute:
 ```
-./run_pumpkin.sh
-```
-or if you want to specify some options (e.g. for debugging):
-```
-python DRHarness.py --supernode --taskdir ~/pmk-seeds --broadcast -c pumpkin.cfg --debug
+python DRHarness.py --supernode --taskdir --broadcast --endpoints="tcp://*:*" --gonzales
 ```
 ## Prepare final result
 
