@@ -45,8 +45,9 @@ You should also change a group name. With the same value for different groups, y
 ## Run Pumpkin
 
 In order to start pumpkin, execute:
+Replace $taskdir by a chosen directory such as '~/pmk-seeds'
 ```
-python DRHarness.py --supernode --taskdir --broadcast --endpoints="tcp://*:*" --gonzales
+python DRHarness.py --supernode --taskdir $taskdir --broadcast --endpoints="tcp://*:*" --gonzales
 ```
 ## Prepare final result
 
