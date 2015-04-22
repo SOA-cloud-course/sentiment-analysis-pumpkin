@@ -21,6 +21,8 @@
 ##END-CONF
 
 import re, datetime,os
+
+from os.path import expanduser
 from pumpkin import PmkSeed
 
 class collector(PmkSeed.Seed):
@@ -32,7 +34,7 @@ class collector(PmkSeed.Seed):
 
     def on_load(self):
         print "Loading: " + self.__class__.__name__
-        self.output_file = open(os.path.expanduser("~") + "/tweetstats.data", 'w')
+        self.output_file = open(expanduser("~") + "/tweetstats.data", 'w')
         self.date = None
 
     def reset_counter(self):
