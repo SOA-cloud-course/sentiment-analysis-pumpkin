@@ -64,7 +64,7 @@ class collector(PmkSeed.Seed):
                 self.neg_counter += 1
 
             if reset_counter:
-                self.logger.info("reset counter")
+                self.logger.info("reset counter, total: "+str(self.total_counter))
                 self.output_file.write("\"%s\" %d %d\n" % (self.date.strftime("%Y-%m-%d %H:%M:%S"), self.pos_counter, self.neg_counter))
                 self.output_file.flush()
                 self.reset_counter()
