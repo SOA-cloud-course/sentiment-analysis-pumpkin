@@ -42,7 +42,7 @@ class collector(PmkSeed.Seed):
         self.neg_counter = 0
         self.current_date = None
    
-   def total_seconds(self,dt):
+    def total_seconds(self,dt):
        # Keep backward compatibility with Python 2.6 which doesn't have
        # this method
         if hasattr(dt, 'total_seconds'):
