@@ -41,6 +41,14 @@ class collector(PmkSeed.Seed):
         self.pos_counter = 0
         self.neg_counter = 0
         self.current_date = None
+   
+   def total_seconds(self,dt):
+       # Keep backward compatibility with Python 2.6 which doesn't have
+       # this method
+        if hasattr(dt, 'total_seconds'):
+            return dt.total_seconds()
+        else:
+            return (td.microseconds + (td.seconds + td.days * 24 * 3600) * 10**6) / 10**6
 
     def run(self, pkt, tweets):
         tweets = cPickle.loads(str(tweets))
@@ -52,7 +60,7 @@ class collector(PmkSeed.Seed):
                 self.date = self.current_date
             reset_counter = False
             # self.logger.info("distance: " + str(abs((self.date - self.current_date).total_seconds())) + " " + str(self.date) + " " + str(self.current_date))
-            if self.date == None or abs((self.date - self.current_date).total_seconds()) > 10:
+            if self.date == None or abs(total_seconds(self.date - self.current_date)) > 10:
                 # self.logger.info("new current date")
                 self.date = self.current_date
                 reset_counter = True
