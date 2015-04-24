@@ -60,7 +60,7 @@ class collector(PmkSeed.Seed):
                 self.date = self.current_date
             reset_counter = False
             # self.logger.info("distance: " + str(abs((self.date - self.current_date).total_seconds())) + " " + str(self.date) + " " + str(self.current_date))
-            if self.date == None or abs(total_seconds(self.date - self.current_date)) > 10:
+            if self.date == None or abs(self.total_seconds(self.date - self.current_date)) > 10:
                 # self.logger.info("new current date")
                 self.date = self.current_date
                 reset_counter = True
